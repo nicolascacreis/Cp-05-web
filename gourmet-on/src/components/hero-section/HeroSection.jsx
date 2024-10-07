@@ -1,16 +1,28 @@
 // src/Slider.jsx
 import { useState } from "react";
-import "./StyledHeroSection";
+
+// Importando as imagens diretamente
+import heroImg1 from "../img/hero-img.jpg";
+import heroImg2 from "../img/hero-img.jpg";
+import heroImg3 from "../img/hero-img.jpg";
+import heroImg4 from "../img/hero-img.jpg";
+import heroImg5 from "../img/hero-img.jpg";
+
+import {
+  SliderContainer,
+  List,
+  SlideImage,
+  Buttons,
+  Button,
+  Dots,
+  Dot,
+} from "./StyledHeroSection";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const images = [
-    "../img/hero-img.jpg",
-    "img/2.jpg",
-    "img/3.jpg",
-    "img/4.jpg",
-    "img/5.jpg",
-  ];
+
+  // Array de imagens importadas diretamente
+  const images = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5];
 
   const nextSlide = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
@@ -23,35 +35,33 @@ const Slider = () => {
   };
 
   return (
-    <div className="slider">
-      <div className="list">
+    <SliderContainer>
+      <List currentIndex={currentIndex}>
         {images.map((src, index) => (
-          <div
-            className="item"
-            key={index}
-            style={{ display: index === currentIndex ? "block" : "none" }}
-          >
-            <img src={src} alt={`Slide ${index + 1}`} />
+          <div key={index} style={{ minWidth: "100vw" }}>
+            {" "}
+            {/* Cada imagem deve ocupar toda a largura da tela */}
+            <SlideImage src={src} alt={`Slide ${index + 1}`} />
           </div>
         ))}
-      </div>
-      <div className="buttons">
-        <button id="prev" onClick={prevSlide}>
+      </List>
+      <Buttons>
+        <Button id="prev" onClick={prevSlide}>
           &lt;
-        </button>
-        <button id="next" onClick={nextSlide}>
+        </Button>
+        <Button id="next" onClick={nextSlide}>
           &gt;
-        </button>
-      </div>
-      <ul className="dots">
+        </Button>
+      </Buttons>
+      <Dots>
         {images.map((_, index) => (
-          <li
+          <Dot
             key={index}
             className={index === currentIndex ? "active" : ""}
-          ></li>
+          ></Dot>
         ))}
-      </ul>
-    </div>
+      </Dots>
+    </SliderContainer>
   );
 };
 

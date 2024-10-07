@@ -1,79 +1,76 @@
+// src/StyledHeroSection.js
 import styled from "styled-components";
 
-const Slider = styled.div`
-  width: 1300px;
-  max-width: 100vw;
-  height: 700px;
-  margin: auto;
+export const SliderContainer = styled.div`
+  width: 100vw; /* Ocupa 100% da largura da tela */
+  height: 100vh; /* Ocupa 100% da altura da tela */
   position: relative;
   overflow: hidden;
-
-  @media screen and (max-width: 768px) {
-    height: 400px;
-  }
 `;
 
-const List = styled.div`
-  position: absolute;
-  width: max-content;
-  height: 100%;
-  left: 0;
-  top: 0;
+export const List = styled.div`
   display: flex;
-  transition: 1s;
-`;
-
-const SlideImage = styled.img`
-  width: 1300px;
-  max-width: 100vw;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
   height: 100%;
-  object-fit: cover;
+  transform: translateX(
+    -${(props) => props.currentIndex * 100}%
+  ); /* Mova com base no índice atual */
 `;
 
-const Buttons = styled.div`
+export const SlideImage = styled.img`
+  width: 100vw; /* Garante que a imagem ocupe 100% da largura */
+  height: 100vh; /* Garante que a imagem ocupe 100% da altura */
+  object-fit: cover; /* Faz com que a imagem cubra completamente o container */
+`;
+
+export const Buttons = styled.div`
   position: absolute;
-  top: 45%;
-  left: 5%;
-  width: 90%;
+  top: 50%;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
+  padding: 0 20px;
+  transform: translateY(-50%);
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
+  background-color: rgba(255, 255, 255, 0.7);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+  border-radius: 50%;
   width: 50px;
   height: 50px;
-  border-radius: 50%;
-  background-color: #fff5;
-  color: #fff;
-  border: none;
-  font-family: monospace;
-  font-weight: bold;
-`;
-
-const Dots = styled.ul`
-  position: absolute;
-  bottom: 10px;
-  left: 0;
-  color: #fff;
-  width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
+  align-items: center;
 `;
 
-const Dot = styled.li`
+export const Dots = styled.ul`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
+`;
+
+export const Dot = styled.li`
   width: 10px;
   height: 10px;
   background-color: #fff;
-  margin: 10px;
-  border-radius: 20px;
-  transition: 0.5s;
+  margin: 0 5px;
+  border-radius: 50%;
+  cursor: pointer;
 
   &.active {
-    width: 30px;
+    background-color: #333;
+    width: 15px;
   }
 `;
-
-export { Slider, List, SlideImage, Buttons, Button, Dots, Dot };
