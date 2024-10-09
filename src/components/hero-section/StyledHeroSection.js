@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const SliderContainer = styled.div`
   position: relative;
   overflow: hidden;
-  max-width: 100%;
+  width: 100vw;
   height: 100vh;
   margin-left: -10px;
 `;
