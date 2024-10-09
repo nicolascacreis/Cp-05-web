@@ -82,28 +82,23 @@ const Menu = () => {
       </Hamburger>
       <MenuItems isOpen={isOpen}>
         <MenuItem>
-          <Link to="home" smooth={true} duration={500}>
+          <Link to="Slider" smooth={true} duration={500}>
             Home
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="about" smooth={true} duration={500}>
-            Sobre
+          <Link to="Apresentacao" smooth={true} duration={500}>
+            Apresentação
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link
-            to="menu"
-            smooth={true}
-            duration={500}
-            href="../funcionalidades/funcionalidades.jsx"
-          >
-            Menu
+          <Link to="Funcionalidades" smooth={true} duration={500}>
+            Funcionalidades
           </Link>
         </MenuItem>
         <MenuItem>
-          <Link to="contact" smooth={true} duration={500}>
-            Contato
+          <Link to="SecDepoimentos" smooth={true} duration={500}>
+            Depoimentos
           </Link>
         </MenuItem>
       </MenuItems>

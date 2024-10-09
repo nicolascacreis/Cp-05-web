@@ -1,8 +1,8 @@
-import styled from 'styled-components';
-import { BsFillPlayCircleFill } from 'react-icons/bs';
-import BGLeft from '../img/bg-left.png';
-import BGRight from '../img/bg-right.png';
-import ApresentacaoImagem from '../img/apresentacao-imagem.png';
+import styled from "styled-components";
+import { BsFillPlayCircleFill } from "react-icons/bs";
+import BGLeft from "../img/bg-left.png";
+import BGRight from "../img/bg-right.png";
+import ApresentacaoImagem from "../img/apresentacao-imagem.png";
 
 const AppContainer = styled.div`
   min-height: 100vh;
@@ -183,7 +183,7 @@ const WatchVideoButton = styled.button`
 
 const Apresentacao = () => {
   return (
-    <AppContainer>
+    <AppContainer id="Apresentacao">
       <ApresentacaoContainer>
         <BackgroundLeft>
           <img src={BGLeft} alt="Background Left" />
@@ -196,7 +196,9 @@ const Apresentacao = () => {
           <PrimaryTitulo>BENEFÍCIOS</PrimaryTitulo>
           <PrimaryText>Os melhores e mais eficientes entregadores.</PrimaryText>
           <PrimaryText>Ampla variedade de tipos de restaurante.</PrimaryText>
-          <PrimaryText>Sistema de pagamento moderno, rápido e fácil.</PrimaryText>
+          <PrimaryText>
+            Sistema de pagamento moderno, rápido e fácil.
+          </PrimaryText>
           <ButtonContainer>
             <SecondaryButton>Saiba Mais</SecondaryButton>
             <WatchVideoButton>

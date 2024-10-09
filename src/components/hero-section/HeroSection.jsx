@@ -46,7 +46,7 @@ const Slider = () => {
   };
 
   return (
-    <SliderContainer>
+    <SliderContainer id="Slider">
       <List currentIndex={currentIndex}>
         {slides.map((slide, index) => (
           <div key={index} style={{ width: "100%", position: "relative" }}>

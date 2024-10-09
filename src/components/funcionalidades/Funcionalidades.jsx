@@ -93,7 +93,7 @@ const Work = () => {
   ];
 
   return (
-    <WorkSectionWrapper>
+    <WorkSectionWrapper id="Funcionalidades">
       <GlobalStyle />
       <WorkSectionBottom>
         {workInfoData.map((data) => (
