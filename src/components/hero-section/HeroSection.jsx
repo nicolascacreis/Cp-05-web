@@ -1,64 +1,70 @@
-// src/Slider.jsx
+// src/components/Slider.jsx
 import { useState } from "react";
 
 // Importando as imagens diretamente
 import heroImg1 from "../img/hero-img.jpg";
-import heroImg2 from "../img/hero-img.jpg";
-import heroImg3 from "../img/hero-img.jpg";
-import heroImg4 from "../img/hero-img.jpg";
-import heroImg5 from "../img/hero-img.jpg";
-
+import heroImg2 from "../img/hero-img2.jpg";
+import heroImg3 from "../img/hero-img.jpg"; // Corrigido para um nome diferente
 import {
   SliderContainer,
   List,
   SlideImage,
-  Buttons,
-  Button,
   Dots,
   Dot,
+  Overlay,
+  TextContainer,
 } from "./StyledHeroSection";
 
 const Slider = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Array de imagens importadas diretamente
-  const images = [heroImg1, heroImg2, heroImg3, heroImg4, heroImg5];
+  const slides = [
+    {
+      image: heroImg1,
+      title: "Descubra o Sabor com GourmetOn! 🍽️",
+      description:
+        "No GourmetOn, sua fome encontra conveniência! Explore uma variedade de pratos deliciosos de restaurantes locais, entregues diretamente na sua porta.",
+    },
+    {
+      image: heroImg2,
+      title: "Delícias em Cada Entrega! 🚚",
+      description:
+        "Nossos entregadores garantem que suas refeições cheguem quentes e frescas. Aproveite a experiência GourmetOn!",
+    },
+    {
+      image: heroImg3,
+      title: "Variedade de Opções! 🍕🍣",
+      description:
+        "Explore uma vasta seleção de pratos, desde pizzas até sushi, tudo em um só lugar.",
+    },
+  ];
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentIndex(
-      (prevIndex) => (prevIndex - 1 + images.length) % images.length
-    );
+  const goToSlide = (index) => {
+    setCurrentIndex(index);
   };
 
   return (
     <SliderContainer>
       <List currentIndex={currentIndex}>
-        {images.map((src, index) => (
-          <div key={index} style={{ minWidth: "100vw" }}>
-            {" "}
-            {/* Cada imagem deve ocupar toda a largura da tela */}
-            <SlideImage src={src} alt={`Slide ${index + 1}`} />
+        {slides.map((slide, index) => (
+          <div key={index} style={{ minWidth: "100vw", position: "relative" }}>
+            <SlideImage src={slide.image} alt={`Slide ${index + 1}`} />
+            <Overlay>
+              <TextContainer>
+                <h1>{slide.title}</h1>
+                <p>{slide.description}</p>
+              </TextContainer>
+            </Overlay>
           </div>
         ))}
       </List>
-      <Buttons>
-        <Button id="prev" onClick={prevSlide}>
-          &lt;
-        </Button>
-        <Button id="next" onClick={nextSlide}>
-          &gt;
-        </Button>
-      </Buttons>
       <Dots>
-        {images.map((_, index) => (
+        {slides.map((_, index) => (
           <Dot
             key={index}
             className={index === currentIndex ? "active" : ""}
-          ></Dot>
+            onClick={() => goToSlide(index)} // Navegação direta para o slide
+          />
         ))}
       </Dots>
     </SliderContainer>
