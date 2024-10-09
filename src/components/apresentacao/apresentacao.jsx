@@ -68,6 +68,7 @@ const ImageContainer = styled.div`
 
 const TextContainer = styled.div`
   flex: 1;
+  align-items: start;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -103,7 +104,7 @@ const PrimaryText = styled.li`
   max-width: 500px;
   color: #444444;
   margin: 1.5rem 0rem;
-  text-align: center;
+  text-align: start;
 
   @media (max-width: 800px) {
     max-width: 80%;
@@ -113,8 +114,12 @@ const PrimaryText = styled.li`
 const ButtonContainer = styled.div`
   margin-top: 2rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+
+  @media (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 const SecondaryButton = styled.button`
