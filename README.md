@@ -1,8 +1,24 @@
-# React + Vite
+# 🖥️ CHECKPOINT 05
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🌐 Web Development
 
-Currently, two official plugins are available:
+Entrega para matéria Web Development (CP05).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👥 Integrantes
+
+- RM: 555530 // Djalma Moreira de Andrade Filho
+- RM: 557943 // Enzo Gaião Real
+- RM: 558447 // Felipe Paes de Barros Muller Carioba
+- RM: 556506 // Nicolas Caciolato Reis
+- RM: 554736 // Rafael Federici de Oliveira
+
+## 📕 Sobre o Projeto
+
+Landing page da GourmetOn, aplicativo de delivery de comidas gourmet.
+
+## 🔨 Ferramentas
+
+- [Visual Studio Code](https://code.visualstudio.com/docs)
+- [Node.js](https://nodejs.org/pt)
+- [React](https://react.dev/)
+- [Vite](https://vite.dev/)
