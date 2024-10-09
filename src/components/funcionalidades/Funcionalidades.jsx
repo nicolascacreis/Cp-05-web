@@ -1,7 +1,12 @@
-import React from "react";
 import styled, { createGlobalStyle } from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBurger, faBowlFood, faUtensils, faEgg, faPepperHot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBurger,
+  faBowlFood,
+  faUtensils,
+  faEgg,
+  faPepperHot,
+} from "@fortawesome/free-solid-svg-icons";
 
 const GlobalStyle = createGlobalStyle`
   * {

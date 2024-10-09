@@ -1,6 +1,5 @@
-import React from "react";
 import styled from "styled-components";
-import "./Contato.css"
+import "./Contato.css";
 
 const ContactWrapper = styled.div`
   display: flex;
@@ -9,7 +8,6 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   margin: 6rem 0rem;
 `;
-
 
 const FormContainer = styled.div`
   background-color: white;

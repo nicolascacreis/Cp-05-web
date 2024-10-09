@@ -1,19 +1,19 @@
-// src/components/Menu.jsx
 import { useState } from "react";
 import styled from "styled-components";
+import { Link } from "react-scroll";
 
 const Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 2em; /* Ajustado para evitar overflow */
-  background-color: #333;
+  padding: 10px;
+  background-color: #ffa41b;
   position: fixed;
   width: 100%;
   height: 80px;
   top: 0;
   z-index: 10;
-  box-sizing: border-box; /* Inclui padding na largura total */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const Logo = styled.h1`
@@ -29,7 +29,7 @@ const MenuItems = styled.ul`
   @media (max-width: 768px) {
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Altura do menu */
+    top: 60px;
     left: 0;
     right: 0;
     background-color: #333;
@@ -65,18 +65,6 @@ const Hamburger = styled.div`
   }
 `;
 
-const ToggleButton = styled.button`
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-
-  @media (max-width: 768px) {
-    display: block;
-  }
-`;
-
 const Menu = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -87,18 +75,37 @@ const Menu = () => {
   return (
     <Nav>
       <Logo>GourmetOn</Logo>
-      <ToggleButton onClick={toggleMenu}>
-        <Hamburger>
-          <div />
-          <div />
-          <div />
-        </Hamburger>
-      </ToggleButton>
+      <Hamburger onClick={toggleMenu}>
+        <div />
+        <div />
+        <div />
+      </Hamburger>
       <MenuItems isOpen={isOpen}>
-        <MenuItem onClick={() => setIsOpen(false)}>Home</MenuItem>
-        <MenuItem onClick={() => setIsOpen(false)}>Sobre</MenuItem>
-        <MenuItem onClick={() => setIsOpen(false)}>Menu</MenuItem>
-        <MenuItem onClick={() => setIsOpen(false)}>Contato</MenuItem>
+        <MenuItem>
+          <Link to="home" smooth={true} duration={500}>
+            Home
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="about" smooth={true} duration={500}>
+            Sobre
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link
+            to="menu"
+            smooth={true}
+            duration={500}
+            href="../funcionalidades/funcionalidades.jsx"
+          >
+            Menu
+          </Link>
+        </MenuItem>
+        <MenuItem>
+          <Link to="contact" smooth={true} duration={500}>
+            Contato
+          </Link>
+        </MenuItem>
       </MenuItems>
     </Nav>
   );
