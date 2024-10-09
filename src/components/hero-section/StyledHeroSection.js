@@ -45,7 +45,7 @@ export const Dot = styled.div`
   }
 
   &:hover {
-    background-color: red; /* Cor ao passar o mouse */
+    background-color: #717171; /* Cor ao passar o mouse */
   }
 `;
 
@@ -65,6 +65,6 @@ export const Overlay = styled.div`
 `;
 
 export const TextContainer = styled.div`
-  max-width: 600px; /* Largura máxima para o texto */
-  padding: 20px; /* Espaçamento interno */
+  max-width: 600px;
+  padding: 20px; 
 `;
