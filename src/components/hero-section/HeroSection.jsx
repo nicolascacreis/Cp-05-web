@@ -1,10 +1,8 @@
 // src/components/Slider.jsx
 import { useState } from "react";
-
-// Importando as imagens diretamente
 import heroImg1 from "../img/hero-img.jpg";
 import heroImg2 from "../img/hero-img2.jpg";
-import heroImg3 from "../img/hero-img.jpg"; // Corrigido para um nome diferente
+import heroImg3 from "../img/hero-img.jpg";
 import {
   SliderContainer,
   List,
@@ -47,7 +45,9 @@ const Slider = () => {
     <SliderContainer>
       <List currentIndex={currentIndex}>
         {slides.map((slide, index) => (
-          <div key={index} style={{ minWidth: "100vw", position: "relative" }}>
+          <div key={index} style={{ width: "100%", position: "relative" }}>
+            {" "}
+            {/* Alterado minWidth para width */}
             <SlideImage src={slide.image} alt={`Slide ${index + 1}`} />
             <Overlay>
               <TextContainer>

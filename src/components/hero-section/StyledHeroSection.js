@@ -1,27 +1,52 @@
-// src/components/StyledHeroSection.js
 import styled from "styled-components";
 
 export const SliderContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
   position: relative;
-  overflow: hidden;
-  margin-top: -10px;
-  margin-left: -10px;
+  overflow: hidden; /* Impede a rolagem lateral */
+  max-width: 100%;
+  height: 100vh; /* Altura total da tela */
 `;
 
 export const List = styled.div`
   display: flex;
-  transition: transform 0.5s ease-in-out;
-  width: 100%;
-  height: 100%;
-  transform: translateX(-${(props) => props.currentIndex * 100}%);
+  transition: transform 0.5s ease;
+  height: 100%; /* Garante que a lista ocupe 100% da altura */
+  transform: translateX(
+    -${(props) => props.currentIndex * 100}%
+  ); /* Muda a posição com base no índice do slide */
 `;
 
 export const SlideImage = styled.img`
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
+  width: 100vw; /* Largura total da tela */
+  height: 100vh; /* Altura total da tela */
+  object-fit: cover; /* Cobre a área do slide */
+`;
+
+export const Dots = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+`;
+
+export const Dot = styled.div`
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #bbb; /* Cor padrão */
+  margin: 0 5px;
+  cursor: pointer;
+
+  &.active {
+    background-color: #717171; /* Cor para o dot ativo */
+    width: 20px; /* Aumenta a largura do dot ativo */
+    height: 20px; /* Aumenta a altura do dot ativo */
+  }
+
+  &:hover {
+    background-color: red; /* Cor ao passar o mouse */
+  }
 `;
 
 export const Overlay = styled.div`
@@ -30,75 +55,16 @@ export const Overlay = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(
-    0,
-    0,
-    0,
-    0.5
-  ); // Ajuste a opacidade conforme necessário
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
   color: white;
-  z-index: 2;
   text-align: center;
 `;
 
 export const TextContainer = styled.div`
-  max-width: 600px; // Limite de largura para o texto
-  padding: 20px; // Espaçamento interno
-`;
-
-export const Buttons = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 20px;
-  transform: translateY(-50%);
-  z-index: 3; // Acima do overlay
-`;
-
-export const Button = styled.button`
-  background-color: rgba(255, 255, 255, 0.7);
-  border: none;
-  padding: 10px 15px;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-  border-radius: 5px;
-  transition: background-color 0.3s;
-
-  &:hover {
-    background-color: rgba(255, 255, 255, 0.9);
-  }
-`;
-
-export const Dots = styled.ul`
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  z-index: 3;
-`;
-
-export const Dot = styled.li`
-  width: 15px;
-  height: 15px;
-  background-color: #fff;
-  margin: 0 5px;
-  border-radius: 50%;
-  cursor: pointer;
-
-  &.active {
-    background-color: #333;
-    width: 20px;
-    height: 20px;
-  }
+  max-width: 600px; /* Largura máxima para o texto */
+  padding: 20px; /* Espaçamento interno */
 `;

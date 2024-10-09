@@ -1,0 +1,6 @@
+/* Adicione isso ao seu CSS global, se necessário */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
