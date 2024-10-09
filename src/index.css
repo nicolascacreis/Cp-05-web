@@ -116,14 +116,14 @@ nav {
   margin-right: 1rem;
 }
 
-.primary-heading {
+.primary-titulo {
   font-size: clamp(2rem, 5vw, 4rem);
-  color: #4c4c4c;
+  color: #222222;
   /* line-height: 5rem; */
   max-width: 600px;
 }
 
-.primary-subheading {
+.primary-subtitulo {
   font-weight: 700;
   color: #fe9e0d;
   font-size: 1.15rem;
@@ -132,11 +132,11 @@ nav {
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   max-width: 500px;
-  color: #6a6a6a;
+  color: #444444;
   margin: 1.5rem 0rem;
 }
 
-.about-section-container {
+.apresentacao-container {
   margin-top: 20rem;
   position: relative;
   display: flex;
@@ -144,32 +144,32 @@ nav {
   justify-content: space-between;
 }
 
-.about-background-image-container-left {
+.apresentacao-bg-left {
   position: absolute;
   left: -150px;
   z-index: -2;
 }
 
-.about-background-image-container-right {
+.apresentacao-bg-right {
   position: absolute;
   bottom: 0px;
   right: -150px;
   z-index: -2;
 }
 
-.about-section-image-container {
+.apresentacao-imagem {
   flex: 0.9;
   margin-right: 1rem;
 }
 
-.about-section-text-container {
+.apresentacao-textos {
   flex: 1;
   justify-content: center;
   display: flex;
   flex-direction: column;
 }
 
-.about-buttons-container {
+.apresentacao-botoes {
   margin-top: 2rem;
   display: flex;
 }
@@ -198,17 +198,17 @@ nav {
     display: flex;
   }
 
-  .about-section-container {
+  .apresentacao-container {
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
   }
 
-  .about-section-container {
+  .apresentacao-container {
     flex-direction: column;
   }
 
-  .about-section-image-container {
+  .apresentacao-imagem {
     width: 100%;
     max-width: 400px;
   }
@@ -223,7 +223,7 @@ nav {
     max-width: 80%;
   }
 
-  .about-section-text-container {
+  .apresentacao-textos {
     justify-content: center;
     align-items: center;
     margin-top: 4rem;
@@ -235,11 +235,11 @@ nav {
     cursor: pointer;
   }
 
-  .about-section-container {
+  .apresentacao-container {
     margin-top: 5rem !important;
   }
 
-  .about-buttons-container {
+  .apresentacao-container {
     justify-content: center;
     flex-direction: column;
   }
@@ -258,7 +258,7 @@ nav {
     margin-right: 0.5rem !important;
   }
 
-  .about-section-image-container {
+  .apresentacao-imagem {
     margin-right: 0rem !important;
   }
 
@@ -268,8 +268,8 @@ nav {
 }
 
 @media (max-width: 600px) {
-  .about-background-image-container-left,
-  .about-background-image-container-right {
+  .apresentacao-bg-left,
+  .apresentacao-bg-right {
     display: none;
   }
 }
