@@ -152,6 +152,7 @@ nav {
 
 .about-background-image-container-right {
   position: absolute;
+  bottom: 0px;
   right: -150px;
   z-index: -2;
 }
