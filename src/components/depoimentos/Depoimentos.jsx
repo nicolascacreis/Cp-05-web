@@ -96,7 +96,7 @@ function SecDepoimentos() {
           <AiFillStar />
           <AiFillStar />
         </Estrelas>
-        <Nome>Mia</Nome>
+        <Nome>Ana</Nome>
       </ParteBaixo>
     </Depoimentos>
   );
